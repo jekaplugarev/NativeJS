@@ -1,3 +1,5 @@
+///=== LESSON 7 ===///
+
 // export function sum(a: number, b: number) {
 //     return a + b
 // }
@@ -46,7 +48,7 @@
 //     return {...student, friends: [...student.friends]}
 // }
 
-/// ===LESSON 8=== ///
+///=== LESSON 8=== ///
 
 export function sumVar1(num: number) {
     let sum = 0
