@@ -1,45 +1,31 @@
-import {calculator, div, getCopyStudent, mult, sum} from './tasks'
+/// LESSON 8
 
-test('sum', () => {
-    const a: number = 10
-    const b: number = 5
-    const result = sum(a, b)
-    expect(result).toBe(15)
+import {getSum, getTriangleType, isEvenSumGreater, sumVar1, sumVar2} from './tasks'
+
+test('sumVar1', () => {
+    expect(sumVar1(3)).toBe(6)
 })
 
-test('div', () => {
-    const a: number = 10
-    const b: number = 5
-    const result = div(a, b)
-    expect(result).toBe(2)
+test('sumVar2', () => {
+    expect(sumVar2(2, 5, 3)).toBe(10)
 })
 
-test('mult', () => {
-    expect(mult(10, 5)).toBe(50)
+test('get triangle type', () => {
+    expect(getTriangleType(1, 1, 1)).toBe('10')
+    expect(getTriangleType(3, 3, 2)).toBe('01')
+    expect(getTriangleType(5, 4, 3)).toBe('11')
+    expect(getTriangleType(10, 5, 5)).toBe('00')
 })
 
-test('calculator', () => {
-    expect(calculator(10, 5, {type: 'sum'})).toBe(15)
-    expect(calculator(10, 5, {type: 'div'})).toBe(2)
-    expect(calculator(10, 5, {type: 'mult'})).toBe(50)
-    expect(calculator(10, 5, {type: 'sub'})).toBe(5)
+test('get sum', () => {
+    expect(getSum(1000)).toBe(1)
+    expect(getSum(1234)).toBe(10)
+    expect(getSum(9999)).toBe(36)
 })
 
-//TDD
+test('is Even Sum Greater', () => {
+    expect(isEvenSumGreater([1, 100, 2, 200])).toBe(false)
+    expect(isEvenSumGreater([100, 1, 200, 2])).toBe(true)
 
-test('deep copy of student', () => {
-    const student = {
-        name: 'Bob',
-        age: 23,
-        isMarried: true,
-        friends: ['Alex', 'Mike']
-    }
-
-    const deepCopyStudent = getCopyStudent(student)
-    expect(deepCopyStudent === student).toBe(false)
-    expect(deepCopyStudent.name === student.name).toBe(true)
-    expect(deepCopyStudent.age === student.age).toBe(true)
-    expect(deepCopyStudent.isMarried === student.isMarried).toBe(true)
-    expect(deepCopyStudent.friends === student.friends).toBe(false)
-    expect(deepCopyStudent.friends[0] === student.friends[0]).toBe(true)
 })
+
